@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Temp Chart</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1 {
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Temperature Conversion Chart</h1>
+        <table border="1" align="center">
+        <script type="text/javascript">
+            document.writeln("<tr><th>Fahrenheit</th>");
+            document.writeln("<th>Celsius</th>");
+            var i;
+            for (i=0; i < 101; i++) { 
+                var cel = (i -32) * 5/9;
+                document.writeln("<tr><td>");
+                document.writeln(i);
+                document.writeln("<td>");
+                document.writeln(cel.toFixed(3));
+            }
+            
+        </script>
+        </table>
+        <center><a href="TempConverter.html">Link to Interactive Converter</a></center>
+    </body>
+</html>
