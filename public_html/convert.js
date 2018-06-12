@@ -1,37 +1,25 @@
-var fahr;
-var cel;
-var result = document.getElementById("result");
-//var convertToF = CtoF();
-//var convertToC = FtoC();
+var result;
 
-var temp = document.getElementById("tempForm");
-temp = temp.value;
-temp = parseFloat(temp);
+function registerOnClickHandlers() {
+    document.getElementById("convert").onclick = showResult;
+}
 
-function convertToF() {
-    if (document.getElementById("toF")) {
-    document.getElementById("convert").onclick = CtoF();
+function pageFinishedLoading() {
+    result = document.getElementById("result");
+}
+
+function showResult() {
+    var convertedTemp;
+    var userInput = parseFloat(document.getElementById("temp").value);
+    console.log(userInput);
+    if (document.getElementById("toF").checked == true) {
+        convertedTemp = (userInput * (9/5)) + 32;
+    } else {
+        convertedTemp = (userInput - 32) * 5/9;
     }
-}    
-function convertToC() {
-    if (document.getElementById("toC")) {
-    document.getElementById("convert").onclick = FtoC();
+    if (convertedTemp) {
+        result.value = convertedTemp;
+    } else {
+        alert("Please enter a number, beeeeeitch");
     }
 }
-
-function CtoF() {
-        cel = (temp - 32) * 5/9;
-        result.value = writeln(cel);
-}
-function FtoC() {
-        fahr = (temp * (9/5)) + 32;
-        result.value = writeln(fahr);
-}
-
-//if (document.getElementById("toF")) {
-//    document.getElementById("convert").onclick = convertToF;
-//} else if (document.getElementById("toC")) {
-//    document.getElementById("convert").onclick = convertToC;
-//} else {
-//    document.getElementById("result").value = "no radio button";
-//}
